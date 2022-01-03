@@ -2,10 +2,10 @@
 
 require "BasicAuth.php";
 
-// Instantiate an app with authentication
+// Instantiate an instance of the authentication class
 $basic = new BasicAuth('../users.ini');
 
-// Authorize every request
+// Authorize every request or bail
 if (!$basic->auth()) {
     die();
 }
