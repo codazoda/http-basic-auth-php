@@ -5,13 +5,14 @@
  */
 class BasicAuth {
 
-    public $config = [
-        "port" => "8003",
-        "path" => "./www"
-    ];
-    public $users = [
-        "admin" => '$2y$10$YT7Um6bwDs2B0rA/8Fi1JOGM9IvJk9wPUrwYJH.c.6JZ7qCSMBdOi'
-    ];
+    public function __construct($passwordFile)
+    {
+        $this->config = [
+            "port" => "8003",
+            "path" => "./www"
+        ];
+        $this->users = parse_ini_file($passwordFile);
+    }
 
     // Authenticate the user
     public function auth() {
