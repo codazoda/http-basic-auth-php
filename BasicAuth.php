@@ -42,7 +42,7 @@ class BasicAuth {
 
     // Bcrypt the password and return a hash
     public function hash($password) {
-        $hash = password_hash($_REQUEST['pass'], PASSWORD_BCRYPT);
+        $hash = password_hash($password, PASSWORD_BCRYPT);
         return $hash;
     }
 
