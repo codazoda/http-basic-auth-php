@@ -15,8 +15,6 @@ class BasicAuth {
 
     // Authenticate the user
     public function auth() {
-        error_log("user: {$_SERVER['PHP_AUTH_USER']}");
-        error_log("pass: {$_SERVER['PHP_AUTH_PW']}");
         // If the username and password are not empty
         if (!empty($_SERVER['PHP_AUTH_USER']) && !empty($_SERVER['PHP_AUTH_PW'])) {
             error_log("Not empty");
@@ -40,6 +38,12 @@ class BasicAuth {
         echo 'Unauthorized';
         // Return false because the user isn't authenticated
         return false;
+    }
+
+    // Bcrypt the password and return a hash
+    public function hash($password) {
+        $hash = password_hash($_REQUEST['pass'], PASSWORD_BCRYPT);
+        return $hash;
     }
 
 }
