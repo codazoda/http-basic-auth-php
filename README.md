@@ -1,5 +1,7 @@
 # HTTP Basic Authentication in PHP
 
+> 💡 Enjoy this tool? Get my weekly developer notes → [joeldare.com/subscribe](https://joeldare.com/subscribe)
+
 A template that does basic authentication in PHP and has no outside dependencies.
 
 WARNING: It is insecure to use HTTP Basic Authentication without HTTPS (TLS) encryption.
